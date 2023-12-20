@@ -1,0 +1,14 @@
+header{
+    background: linear-gradient(to right,#1a81ef, #000080);
+    text-align: center;
+}
+
+
+h1{
+    color: white;
+    display: inline-block;
+}
+
+#forcast-container>*{
+    background-color: #1a81ef;
+}
