@@ -24,15 +24,40 @@ $('#search-button').on('click', function (event) {
     .then(function (data) {
 
       console.log(data)
+
      var date = data.list[0].dt_txt.split(' ')[0]
      var icon = data.list[0].weather[0].icon
      var temp = data.list[0].main.temp
      var wind = data.list[0].wind.speed
      var humidity = data.list[0].main.humidity
     
-     console.log(humidity)
-  
-     
+     var forecasts = [];
+     for(let i=0;i<data.list.length;i++){
+      var date = data.list[i].dt_txt.split(' ')[0]
+      var icon = data.list[i].weather[0].icon
+      var temp = data.list[i].main.temp
+      var wind = data.list[i].wind.speed
+      var humidity = data.list[i].main.humidity
+
+      forecasts.push(new Forecast(date,icon,temp,wind,humidity))
+      var card = document.createElement("div");
+      card.className= "col-lg-4 col-12 mb-4 cd";
+      card.innerHTML= `
+      <div class= "card">
+      <div class="card-body">
+      <h2 class="card-title text">${date}</h2>
+      <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">
+      <p class="card-text text"> Temperature: ${temp}°C</p>
+      <p class="card-text text"> Wind speed: ${wind} KPH</p>
+      <p class="card-text text"> Humidity: ${humidity}%</p>
+      </div>
+      </div>
+      `;
+      var forecastContainer = document.getElementById("forcast-container");
+      if(forecastContainer){
+        forecastContainer.appendChild(card)
+      }
+     }
 
 
 
@@ -56,17 +81,15 @@ getInput()
 function renderInput(city) {
   $('ul').empty()
   for (var i = 0; i < cityList.length; i++) {
-    const cityEL = $('<li>').text(cityList[i]).addClass('list-item-group city'); // add a click event
+    const cityEL = $('<li>').text(cityList[i]).addClass('list-item-group city');
     $('ul').append(cityEL);
 
     cityEL.on('click', function () {
-      var cityName = $(this).text(); // Get the text content of the clicked element
+      var cityName = $(this).text();
       cityList.push(cityName);
 
-      // console.log('Clicked on ' + cityName);
 
-      // Call a function or perform actions with the updated cityList if needed
-      // Example: storeCityList(cityList);
+     
     });
 
   }

@@ -9,6 +9,12 @@ h1{
     display: inline-block;
 }
 
-#forcast-container>*{
-    background-color: #1a81ef;
+.card-body{
+    background-color: black;
+}
+/* .card-title{
+    color: white;
+} */
+.text{
+    color: white;
 }
