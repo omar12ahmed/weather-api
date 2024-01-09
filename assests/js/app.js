@@ -40,7 +40,7 @@ function searchAPI(cityLocation) {
 
     console.log(currentCity)
 
-    document.getElementById("date").innerHTML=currentCity +" ("+currentdate+")"+ `<img src="http://openweathermap.org/img/wn/${currentIcon}.png" alt="Weather Icon">`
+    document.getElementById("date").innerHTML=currentCity +" ("+currentdate+")"+ `<img src="https://openweathermap.org/img/wn/${currentIcon}.png" alt="Weather Icon">`
     document.getElementById("divTemp").textContent="Temp: "+currentTemp+" °C";
     document.getElementById("divWind").textContent="Wind Speed: "+currentWind+" KPH";
     document.getElementById("divHumidity").textContent="Humidity: "+currentHumidity+" %"
@@ -63,7 +63,7 @@ function searchAPI(cityLocation) {
       <div class= "card">
       <div class="card-body">
       <h2 class="card-title text">${date}</h2>
-      <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">
+      <img src="https://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">
       <p class="card-text text"> Temperature: ${temp} °C</p>
       <p class="card-text text"> Wind speed: ${wind} KPH</p>
       <p class="card-text text"> Humidity: ${humidity} %</p>
