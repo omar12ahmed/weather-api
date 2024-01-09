@@ -19,7 +19,7 @@ $('#search-button').on('click',function(e){
 } );
 function searchAPI(cityLocation) {
 
-  var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityLocation + "&appid=" + api+"&units=metric";
+  var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityLocation + "&appid=" + api+"&units=metric";
 
 
 
