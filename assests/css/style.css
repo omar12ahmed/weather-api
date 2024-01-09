@@ -5,16 +5,31 @@ header{
 
 
 h1{
-    color: white;
+    /* color: white; */
     display: inline-block;
 }
 
 .card-body{
-    background-color: black;
+    background-color: rgb(44, 44, 58);
 }
 /* .card-title{
     color: white;
 } */
 .text{
     color: white;
+}
+
+.current-weather{
+    border: 2px black solid;
+    display:none;
+}
+
+.city{
+    cursor: pointer;
+    background-color: brown;
+    margin: 2px;
+    display:inline;
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
 }
